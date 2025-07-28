@@ -1,0 +1,196 @@
+/* General Body and App Layout */
+body {
+  margin: 0;
+  font-family: 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #e0e0e0;  Remove or comment out */
+  color: #333;
+  /* Add background image */
+  background-image: url('./images/roman-empire.jpeg');
+  background-size: cover; /* or 'contain', or specific dimensions */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed; /* Optional: for fixed background while scrolling */
+}
+
+.App {
+  text-align: center;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0; /* Remove padding from App */
+  box-sizing: border-box; /* Include padding/border in element's total width/height */
+}
+
+/* Header Styling */
+.App-header {
+  background: linear-gradient(135deg, #c39f26, #8d8922); /* Deep purple to blue-violet gradient */
+  padding: 30px 20px;
+  color: white;
+  width: 100%;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+  margin-bottom: 30px;
+  border-bottom-left-radius: 15px;
+  border-bottom-right-radius: 15px;
+}
+
+.App-header h1 {
+  margin: 0;
+  font-size: 3em; /* Larger title */
+  font-weight: 700;
+  letter-spacing: 1px;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.app-subtitle { /* NEW SUBTITLE STYLE */
+  font-size: 1.2em;
+  margin-top: 10px;
+  opacity: 0.9;
+}
+
+
+.App-main {
+  width: 90%;
+  max-width: 900px; 
+  margin-bottom: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px; 
+}
+
+
+.prompt-section {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15); 
+  border: 1px solid #ddd;
+}
+
+.prompt-section h2 {
+  color: #583f00; 
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.query-form {
+  display: flex;
+  flex-direction: column;
+  gap: 18px; 
+  align-items: center; 
+}
+
+.query-input {
+  width: 100%;
+  padding: 15px; 
+  border: 2px solid #a0a0a0; 
+  border-radius: 10px;
+  font-size: 1.1em;
+  resize: vertical;
+  min-height: 120px;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box; 
+}
+
+.query-input:focus {
+  border-color: #090909; 
+  box-shadow: 0 0 0 3px rgba(138, 43, 226, 0.3); 
+  outline: none;
+}
+
+.query-input::placeholder {
+  color: #888;
+}
+
+.submit-button {
+  background-color: #c37413; 
+  color: white;
+  padding: 14px 28px; 
+  border: none;
+  border-radius: 25px; 
+  font-size: 1.2em;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+  min-width: 200px;
+}
+
+.submit-button:hover:not(:disabled) {
+  background-color: #f5e48e; 
+  transform: translateY(-2px); 
+}
+
+.submit-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+  opacity: 0.7;
+}
+
+
+.error-message {
+  color: #dc3545; 
+  margin-top: 15px;
+  font-weight: bold;
+  background-color: #ffebe9; 
+  padding: 10px;
+  border-radius: 5px;
+  border: 1px solid #dc3545;
+}
+
+
+.response-section { 
+  background-color: #c5bcea;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  border: 1px solid #ddd;
+  text-align: left; 
+}
+
+.response-section h2 {
+  color: #d355ad; 
+  font-size: 1.8em;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.response-card { 
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 8px;
+  border: 1px solid #eee; 
+  box-shadow: inset 0 1px 5px rgba(0, 0, 0, 0.05);
+  max-height: 400px;
+  overflow-y: auto;
+  line-height: 1.6;
+  font-size: 1.1em;
+  color: #555;
+  white-space: pre-wrap;
+  word-wrap: break-word;
+}
+
+@media (max-width: 768px) {
+  .App-header h1 {
+    font-size: 2.2em;
+  }
+  .app-subtitle {
+    font-size: 1em;
+  }
+  .App-main {
+    width: 95%;
+    padding: 15px;
+  }
+  .prompt-section, .response-section {
+    padding: 20px;
+  }
+  .submit-button {
+    font-size: 1.1em;
+    padding: 12px 20px;
+  }
+}
